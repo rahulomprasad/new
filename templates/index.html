@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>BLOG APP</title>
+    </head>
+    <body>
+       {% for article in articles %}
+     
+<a href="{% url 'single' %}"> 
+<h2>{{article.title}}</h2></a>
+       <a>Posted by : {{article.author}}, poseted in : {{article.category}}</a>
+       <img src="{{article.image.url}}" alt="{{article.title}}">
+       <p>{{article.content}}</p>
+       {% endfor %}
+    </body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>BLOG APP</title>
+    </head>
+    <body>
+     <a href="{% url 'index' %}"> GO BACKkkk ....</a>
+       <h2>{{single.title}}</h2></a>
+       <a>Posted by : {{single.author}}, poseted in : {{single.category}}
+       <img src="{{single.image.url}}" alt="{{single.title}}">
+       <p>{{single.content}}</p>
+    </body>
+</html>
