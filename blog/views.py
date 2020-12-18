@@ -4,13 +4,13 @@ from django.contrib.auth import logout,authenticate,login
 from .models import Article,Author,Category
 # Create your views here.
 def index(request):
-    #if request.user.isanonymous:
-        #return redirect("/login")
+    if request.user.isanonymous:
+        return redirect("/login")
     articles=Article.objects.all()
     return render(request, 'index.html' ,{'articles':articles})
 def single(request,id):
-    #if request.user.isanonymous:
-        #return redirect("/login")
+    if request.user.isanonymous:
+        return redirect("/login")
     single=Article.objects.get(id=id)
     return render(request, 'single.html' ,{'single':single})
 def loginuser(request):
@@ -20,13 +20,13 @@ def loginuser(request):
         print(password)
         print(username,password)
         user = authenticate(username=username, password=password)
-       # if user is not None:
+        if user is not None:
             #print(100)
-            #login(request,user)
+            login(request,user)
         return redirect("/")
-        #else:
+        else:
             #print("rahul")
-            #return render(request,'login.html')
+            return render(request,'login.html')
     return render(request, 'login.html')
 def logoutuser(request):
     logout(request)
