@@ -28,7 +28,7 @@ def loginuser(request):
             #print("rahul")
             return render(request,'login.html')
     return render(request, 'login.html')
-def signup(request):
+def signupuser(request):
     if request.method=="POST":
         username=request.POST.get('username')
         password=request.POST.get('password')
@@ -37,7 +37,7 @@ def signup(request):
         user = Author(username=username, password=password)
         user.save()
     return render(request, 'login.html')
-def addarticle(request):
+def addarticlenew(request):
     if request.method=="POST":
         title=request.POST.get('username')
         img=request.POST.get('password')
