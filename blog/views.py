@@ -37,6 +37,17 @@ def signup(request):
         user = Author(username=username, password=password)
         user.save()
     return render(request, 'login.html')
+def addarticle(request):
+    if request.method=="POST":
+        title=request.POST.get('username')
+        img=request.POST.get('password')
+        content=request.POST.get('username')
+        user=request.POST.get('password')
+        #print(password)
+        #print(username,password)
+        user = Article(title=title, img=img, des=des, author=iser)
+        Article.save()
+    return render(request, 'index.html')
 def logoutuser(request):
     logout(request)
     return redirect("/login")
