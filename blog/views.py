@@ -28,6 +28,15 @@ def loginuser(request):
             #print("rahul")
             return render(request,'login.html')
     return render(request, 'login.html')
+def signup(request):
+    if request.method=="POST":
+        username=request.POST.get('username')
+        password=request.POST.get('password')
+        #print(password)
+        #print(username,password)
+        user = User(username=username, password=password)
+        user.save()
+    return render(request, 'login.html')
 def logoutuser(request):
     logout(request)
     return redirect("/login")
