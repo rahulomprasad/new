@@ -34,7 +34,7 @@ def signup(request):
         password=request.POST.get('password')
         #print(password)
         #print(username,password)
-        user = User(username=username, password=password)
+        user = Author(username=username, password=password)
         user.save()
     return render(request, 'login.html')
 def logoutuser(request):
