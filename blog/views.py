@@ -45,7 +45,7 @@ def addarticle(request):
         user=request.POST.get('password')
         #print(password)
         #print(username,password)
-        user = Article(title=title, img=img, des=des, author=iser)
+        user = Article(title=title, image=img, content=content, author=user)
         Article.save()
     return render(request, 'index.html')
 def logoutuser(request):
