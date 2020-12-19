@@ -38,6 +38,8 @@ def signupuser(request):
         user.save()
     return render(request, 'login.html')
 def addarticlenew(request):
+    if request.user.isanonymous:
+        return redirect("/login")
     if request.method=="POST":
         title=request.POST.get('username')
         img=request.POST.get('password')
