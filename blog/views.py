@@ -32,10 +32,13 @@ def signupuser(request):
     if request.method=="POST":
         username=request.POST.get('username')
         password=request.POST.get('password')
+        email=request.POST.get('email')
         #print(password)
         #print(username,password)
         user = Author(username=username, password=password)
+        author = User(username=username, email=email)
         user.save()
+        author.save()
     return render(request, 'login.html')
 def addarticlenew(request):
     if request.user.is_anonymous:
