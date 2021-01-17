@@ -7,7 +7,7 @@ from django.urls import reverse
     
 class Author(models.Model):
     name=models.CharField(max_length=50)
-    password=models.CharField()
+    email=models.CharField()
     #bio=models.TextField()
     def __str__(self):
     return self.name
